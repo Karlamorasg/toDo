@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { theme } from "../../theme";
@@ -44,7 +44,7 @@ describe("App Component", function () {
   });
 
   it("should works correctly the delete and edit button", async function () {
-    const { getAllByTitle, findByText, getByText } = render(
+    const { getAllByTitle, getByText } = render(
       <Provider store={store}>
         <MuiThemeProvider theme={theme}>
           <TodoList todoList={items} />
